@@ -17,3 +17,4 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 14. install jetbrains toolbox - sync settings with accounts, disable tabs
 15. use vim bindings on all editors
 16. install arc, soon to be zen
+17. install gpg key chain, create key with email, make sure email is added in github, upload public key to github. 
