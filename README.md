@@ -14,6 +14,6 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 11. `cp .aerospace.toml ~/.aerospace.toml`
 12. start aerospace
 13. install zed:
-14. install jetbrains toolbox
+14. install jetbrains toolbox - sync settings with accounts, disable tabs
 15. use vim bindings on all editors
 16. install arc, soon to be zen
