@@ -3,17 +3,18 @@ my osx dev setup
 - install homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - install omzh: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - install zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
-- install zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc`
+- install zsh-syntax-highlighting: `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting` (`.zshrc` loads it as an oh-my-zsh plugin)
 - install gh cli: `brew install gh`
 - clone: `gh repo clone ontehfritz/osx-dev-box`
 - `cd` into osx-dev-box
-- `cp .zshrc ~/.zshrc`
+- link dotfiles: `./install.sh` (run after oh-my-zsh is installed, since its installer rewrites `~/.zshrc`)
+  - symlinks `.zshrc`, `.aerospace.toml`, `.ideavimrc` into `~` and `bordersrc` to `~/.config/borders/bordersrc`
+  - existing files are moved to `<file>.bak.<timestamp>`; files already linked to the repo are skipped
+  - preview with `./install.sh --dry-run`
+  - the links point into this clone: keep it in place, and edits to the linked files change the repo
 -  install jankyborders: `brew tap FelixKratz/formulae brew install borders`
-- cp bordersrc ~/.config/borders/bordersrc
 - run: brew services start borders
 - install aerospace: `brew install --cask nikitabobko/tap/aerospace`
-- `cp .aerospace.toml ~/.aerospace.toml`
 - start aerospace
 - install zed:
 - install jetbrains toolbox - sync settings with accounts, disable tabs
